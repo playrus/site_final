@@ -17,3 +17,11 @@ def home(request):
     products_images_phones = products_images.filter(product__category__id=1)
     products_images_laptops = products_images.filter(product__category__id=2)
     return render(request, "landing/home.html", locals())
+
+def about(request):
+
+    return render(request, "landing/about.html", locals())
+
+def delivery(request):
+   
+    return render(request, "landing/delivery.html", locals())
