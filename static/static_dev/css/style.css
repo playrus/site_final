@@ -113,3 +113,9 @@ html, body{
 .form-error{
     color: red;
 }
+
+.imgpos{
+    /* display: block; */
+    max-width: 100%;
+    height: 230px;
+}
