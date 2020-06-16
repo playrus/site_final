@@ -24,12 +24,13 @@
                   <ul>
                     {% for product_in_basket in products_in_basket %}
                       <li>
-                        <form action="" id="" class="">{% csrf_token %}
+                        <form action="" id="form_csrf" class="">{% csrf_token %}
+                        </form>
                         {{ product_in_basket.product.name }}  
                         {{ product_in_basket.nmb }} шт. по 
                         {{ product_in_basket.price_per_item }} руб.                       
                         <a class="delete-item" href="" data-product_id = "{{ product_in_basket.id }}">x</a>
-                        </form>
+                        
                         
                       </li>
                     {% endfor %}

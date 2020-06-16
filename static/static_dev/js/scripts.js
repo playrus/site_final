@@ -7,14 +7,25 @@ $(document).ready(function(){
         var data = {};
         data.product_id = product_id;
         data.nmb = nmb;
-        var csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val();
+        var csrf_token;
+        csrf_token = $('#form_csrf [name="csrfmiddlewaretoken"]').val();
+        if (csrf_token == null){
+            console.log("form_csrf = undef");
+            csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val()
+            
+        } 
+        //csrf_token = $('#form_buying_product [name="csrfmiddlewaretoken"]').val()
         data["csrfmiddlewaretoken"] = csrf_token;
+        console.log("tot_nb: " + data.products_total_nmb);
 
         if (is_delete){
             data["is_delete"] = true;
         }
 
          var url = form.attr("action");
+         if (url == null){
+             url = "/basket_adding/";
+         }
 
         console.log(data)
          $.ajax({
@@ -24,9 +35,8 @@ $(document).ready(function(){
             cache: true,
             success: function (data) {
                console.log("OK");
-               console.log("2");
-               console.log(data.products_total_nmb);
-               console.log("2");
+               console.log("url " + url);
+               console.log("products_total_nmb: " + data.products_total_nmb);
                if (data.products_total_nmb || data.products_total_nmb == 0){
                   $('#basket_total_nmb').text("("+data.products_total_nmb+")");
                    console.log(data.products);
@@ -46,7 +56,7 @@ $(document).ready(function(){
 
     }
 
-    form.on('submit', function(e){
+    form.on('submit', function(e){             // добавить в корзину
         e.preventDefault();
         console.log('123');
         var nmb = $('#number').val();
@@ -79,7 +89,7 @@ $(document).ready(function(){
      //    showingBasket();
      //});
 
-     $(document).on('click', '.delete-item', function(e){
+     $(document).on('click', '.delete-item', function(e){     // удаление из корзины
          e.preventDefault();
          product_id = $(this).data("product_id")
          nmb = 0;
@@ -95,7 +105,7 @@ $(document).ready(function(){
         $('#total_order_amount').text(total_order_amount.toFixed(2));
     };
 
-    $(document).on('change', ".product-in-basket-nmb", function(){
+    $(document).on('change', ".product-in-basket-nmb", function(){           // добавть на чекауте
         var current_nmb = $(this).val();
         console.log(current_nmb);
 
