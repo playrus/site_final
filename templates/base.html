@@ -20,10 +20,13 @@
 
     <div class="wrapper">
         <div class="wrapper-content">
+            
             {% include 'navbar.html' %}
-
+            
             {% block content %}
             {% endblock content %}
+            
+            <form action="" data-product_id = "{{ product_in_basket.id }}" class=" delete-item ">{% csrf_token %}</form>
         </div>
 
     </div>

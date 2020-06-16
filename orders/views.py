@@ -18,7 +18,7 @@ def basket_adding(request):
         ProductInBasket.objects.filter(id=product_id).update(is_active=False)
     else:
         new_product, created = ProductInBasket.objects.get_or_create(session_key=session_key, product_id=product_id,
-                                                    order=None,  is_active=True, defaults={"nmb": nmb})
+                                                  order=None,    is_active=True, defaults={"nmb": nmb})
         if not created:
             print ("not created")
             new_product.nmb += int(nmb)
@@ -81,3 +81,7 @@ def checkout(request):
         else:
             print("no")
     return render(request, 'orders/checkout.html', locals())
+
+def purchase(request):
+   
+    return render(request, "orders/purchase.html", locals())
