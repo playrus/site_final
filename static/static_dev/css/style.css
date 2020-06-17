@@ -18,12 +18,15 @@ html, body{
     padding-bottom: 180px; /* must be same height as the footer */
 }
 
-.footer{
-    position: relative;
-    margin-top: -180px; /* negative value of footer height */
-    height: 180px;
-    clear: both;
-    background-color: white;
+.footer-color{
+    background-color: #55e093;
+    
+    height: 50px;
+}
+
+.footer-align{
+    padding-top: 15px;
+    text-align: center;
 }
 
 .section-top{
@@ -124,4 +127,13 @@ html, body{
     margin-top: 100px;
     text-align: center;
     
+}
+
+.section-discount{
+    background-color: #28804f;
+    padding-block-start: inherit;
+}
+
+.img-on-self-page{
+    border: 1px solid black;
 }

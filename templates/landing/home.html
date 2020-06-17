@@ -20,12 +20,21 @@
             </div>
         </div>
     </div>
-    <div class="section section-delivery">
-        <div>
-            <h3>Скидки</h3>
+    <div class="section section-discount">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="text-center">
+                        Скидки
+                    </h1>
+                </div>
+                {% for product_image in products_images_discount %}
+                    {% include 'landing/product_item.html' %}
+                {% endfor %}
+            </div>
         </div>
     </div>
-    <div class="section section2 phones-container">
+    <div class="section section2 cat1-container">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -33,14 +42,14 @@
                         Категория 1
                     </h1>
                 </div>
-                {% for product_image in products_images_phones %}
+                {% for product_image in products_images_cat1 %}
                     {% include 'landing/product_item.html' %}
                 {% endfor %}
 
             </div>
         </div>
     </div>
-    <div class="section section3 laptops-container">
+    <div class="section section3 cat2-container">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -48,7 +57,7 @@
                         Категория 2
                     </h1>
                 </div>
-                {% for product_image in products_images_laptops %}
+                {% for product_image in products_images_cat2 %}
                     {% include 'landing/product_item.html' %}
                 {% endfor %}
 

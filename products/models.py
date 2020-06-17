@@ -8,16 +8,16 @@ class ProductCategory(models.Model):
         return "%s" % self.name
 
     class Meta:
-        verbose_name = 'Категоряи товара'
+        verbose_name = 'Категория товара'
         verbose_name_plural = 'Категории товаров'
 
 class Product(models.Model):
     name=models.CharField(max_length=128)
     price = models.DecimalField(max_digits=10,decimal_places=2,default=0)
-    shourt_description = models.TextField(blank=True,null=True,default=None)
     description = models.TextField(blank=True,null=True,default=None)
     is_active=models.BooleanField(default=True)
     discount = models.IntegerField(default=0)
+    is_discount=models.BooleanField(default=False)
     category = models.ForeignKey(ProductCategory,on_delete=models.CASCADE, blank=True,null=True,default=None)
     created=models.DateTimeField(auto_now_add=True, auto_now=False)
     updated=models.DateTimeField(auto_now_add=False,auto_now=True)
