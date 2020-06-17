@@ -9,6 +9,8 @@ html, body{
     margin-bottom: 0;
 }
 
+
+
 .wrapper{
     min-height: 100%;
 }
@@ -19,12 +21,13 @@ html, body{
 }
 
 .footer-color{
-    background-color: #55e093;
+    background-color: #38403a;
     
     height: 50px;
 }
 
 .footer-align{
+    color: white;
     padding-top: 15px;
     text-align: center;
 }
@@ -93,7 +96,7 @@ html, body{
 }
 
 .navbar-main{
-    background-color: #55e073;
+    background-color: #38403a;
     border: none;
     border-radius: 0;
 }
@@ -108,9 +111,10 @@ html, body{
     position: absolute;
     top: 50px;
     width: 100%;
-    background-color: #55e093;
+    background-color: #656565;
     z-index: 10;
     padding: 10px;
+    color:#efeaea;
 }
 
 .form-error{
@@ -130,10 +134,31 @@ html, body{
 }
 
 .section-discount{
-    background-color: #28804f;
+    background-color: #deded7;
     padding-block-start: inherit;
 }
 
 .img-on-self-page{
     border: 1px solid black;
+}
+
+.bg-img{
+    max-height: 950px;
+}
+
+.navbar-default .navbar-brand{
+    color:#efeaea;
+}
+
+.navbar-default .navbar-nav>li>a{
+    color:#efeaea;
+}
+
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
+    color: #ab9c9c;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-brand:hover{
+    color: #ab9c9c;
 }
