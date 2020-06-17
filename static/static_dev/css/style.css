@@ -145,6 +145,13 @@ html, body{
 .bg-img{
     max-height: 950px;
 }
+a{
+    color: #efeaea;
+}
+
+a:hover{
+    color: #ab9c9c;
+}
 
 .navbar-default .navbar-brand{
     color:#efeaea;
