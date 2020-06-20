@@ -146,9 +146,9 @@ html, body{
     max-height: 950px;
     min-width: 100%;
 }
-a{
+/* a{
     color: #efeaea;
-}
+} */
 
 a:hover{
     color: #ab9c9c;
